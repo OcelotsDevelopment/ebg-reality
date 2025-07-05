@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EBG </title>
+
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Countdown Banner -->
+  <div class="bg-yellow-600 text-white text-center py-2 text-sm font-medium fixed w-full top-0 z-50">
+    <span>⚡ Early Bird Offer Ends In:</span>
+    <span class="ml-2 font-bold">13 HRS 0 MINS 49 SECS</span>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="relative h-screen w-full bg-cover bg-center overflow-y-hidden flex items-center justify-center">
+    <video src="https://cdn.shopify.com/videos/c/o/v/3c96af96a2744ce49c46b3a06756d048.mp4" autoplay muted loop
+      class="absolute top-0 left-0 w-screen min-h-full"></video>
+    <div
+      class="relative z-10 bg-white/2 backdrop-blur-md rounded-2xl border border-white/20 px-6 py-10 md:px-16 md:py-14 max-w-2xl text-center text-white shadow-xl">
+      <p class="gfade text-sm uppercase tracking-widest mb-3">Join us at</p>
+      <h1 class="gfade text-3xl md:text-5xl font-bold mb-4">EBG Realty Expo 2025</h1>
+      <p class="gfade text-base md:text-lg mb-6">
+        India's most awaited real estate investment show is back—showcasing exclusive Dubai and Indian luxury projects.
+      </p>
+      <p class="gfade text-lg font-semibold mb-8">August 2 & 3 | Novotel Vijayawada</p>
+      <div class="gfade">
+        <a href="#"
+          class=" inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-full shadow-md transition duration-300">
+          Book Now for ₹99 <span class="line-through text-gray-800 text-sm">₹599</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-20 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+
+      <!-- Image Section -->
+      <div class="w-full lg:w-1/2">
+        <img src="./public/whyinvest.webp" alt="Smart Investors at EBG Realty Expo"
+          class="zoomimg rounded-xl shadow-lg w-full h-auto object-cover">
+      </div>
+
+      <!-- Content Section -->
+      <div class="w-full lg:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Smart Investors Are Attending EBG Realty Expo
+          2025</h2>
+        <p class="text-gray-600 mb-8">
+          From early-stage launches to luxury handovers—explore Dubai & India's best investments.
+          Get direct access to developers, expo-only deals, expert-led sessions, and more.
+        </p>
+
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">What You'll Gain</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card 1 -->
+          <div class="gfade bg-white rounded-xl p-6 shadow-md flex items-start gap-4">
+            <img src="https://img.icons8.com/fluency-systems-filled/24/handshake.png" alt="Meet Top Developers"
+              class="w-6 h-6 mt-1">
+            <div>
+              <h4 class="font-semibold text-gray-900">Meet Top Developers</h4>
+              <p class="text-sm text-gray-600">1:1 access to India's & Dubai's most trusted builders.</p>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="gfade bg-white rounded-xl p-6 shadow-md flex items-start gap-4">
+            <img src="https://img.icons8.com/ios-filled/24/gift.png" alt="Expo Offers" class="w-6 h-6 mt-1">
+            <div>
+              <h4 class="font-semibold text-gray-900">Expo-Only Offers</h4>
+              <p class="text-sm text-gray-600">Unlock exclusive launch deals and pricing.</p>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="gfade bg-white rounded-xl p-6 shadow-md flex items-start gap-4">
+            <img src="https://img.icons8.com/ios-filled/24/briefcase.png" alt="Investment Insights"
+              class="w-6 h-6 mt-1">
+            <div>
+              <h4 class="font-semibold text-gray-900">Investment Insights</h4>
+              <p class="text-sm text-gray-600">Understand ROI, rental yields & buyback models.</p>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="gfade bg-white rounded-xl p-6 shadow-md flex items-start gap-4">
+            <img src="https://img.icons8.com/ios-filled/24/conference-call.png" alt="Expert Sessions"
+              class="w-6 h-6 mt-1">
+            <div>
+              <h4 class="font-semibold text-gray-900">Expert Sessions</h4>
+              <p class="text-sm text-gray-600">Legal, taxation, and NRI Q&A at the venue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-[#f3f3f3]">
+    <div class="max-w-4xl mx-auto py-14 ">
+      <div class="flex gap-9">
+        <div class="flex flex-col justify-between gap-8 w-1/2 h-full">
+          <h2 class="text-[54px] font-bold leading-14 ">Featured Dubai <br>Projects</h2>
+          <p>Explore a handpicked portfolio of luxury developments from Emaar, DAMAC & Binghatti, launching exclusively
+            at the EBG Realty Expo 2025.</p>
+          <a href="#"
+            class=" inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 w-fit">
+            Book Now for ₹99 <span class="line-through text-gray-800 text-sm">₹599</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="w-1/2">
+          <img src="./public/assets/featureDubai.webp" alt="" class="rounded-xl">
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1434394354979-a235cd36269d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1451&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1458668383970-8ddd3927deed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1467&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1444065707204-12decac917e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80"
+            alt=""></div>
+        <div class="swiper-slide"><img
+            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+            alt=""></div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
