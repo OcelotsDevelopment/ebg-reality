@@ -15,11 +15,11 @@
         <img src="./public/logo-white.png" alt="Logo" class="h-12 md:h-14">
 
         <nav class="hidden md:flex gap-10 items-center text-white">
-          <a href="#" class="hover:text-primary transition">Home</a>
-          <a href="#" class="hover:text-primary transition">About</a>
-          <a href="#" class="hover:text-primary transition">Categories</a>
-          <a href="#" class="hover:text-primary transition">Testimonials</a>
-          <button class="bg-primary px-6 py-2 rounded-lg text-white">Buy Tickets</button>
+          <a href="#home" class="hover:text-primary transition">Home</a>
+          <a href="#attend" class="hover:text-primary transition">Why Attend</a>
+          <a href="#featured" class="hover:text-primary transition">Featured</a>
+          <a href="#contactus" class="hover:text-primary transition">Contact Us</a>
+          <button class="relative z-50 bap cursor-pointer bg-primary px-6 py-2 rounded-lg text-white">Buy Tickets</button>
         </nav>
 
         <!-- Hamburger for mobile -->
@@ -39,13 +39,13 @@
         <a href="#" class="block py-2">About</a>
         <a href="#" class="block py-2">Categories</a>
         <a href="#" class="block py-2">Testimonials</a>
-        <button class="w-full bg-primary px-4 py-3 mt-3 rounded-lg">Buy Tickets</button>
+        <button class="bap w-full bg-primary px-4 py-3 mt-3 rounded-lg">Buy Tickets</button>
       </div>
     </header>
 
     <!-- Background Overlay & Video -->
     <div class="absolute inset-0 z-10 bg-black/40"></div>
-    <video src="./public/assets/bg-video.mp4" class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted
+    <video id="home" src="./public/assets/bg-video.mp4" class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted
       loop></video>
 
     <!-- Hero Text -->
@@ -56,7 +56,7 @@
         “Discover our signature developments, live project walkthroughs, VIP consultations & exclusive early-bird ticket
         access.”
       </p>
-      <button class="mt-6 bg-primary text-white px-6 py-3 rounded-lg">Buy Tickets</button>
+      <button class="bap mt-6 bg-primary text-white px-6 py-3 rounded-lg">Buy Tickets</button>
     </div>
 
     <!-- Bottom Info Grid -->
@@ -104,6 +104,7 @@
           <path fill="white"
             d="M12 0v28h2v-6h4v6h7V0H12zm10 2v2h-2V2h2zm0 4v2h-2V6h2zm0 4v2h-2v-2h2zm0 4v2h-2v-2h2zm0 4v2h-2v-2h2zm-6-12h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
         </svg>
+        <div id="attend" ></div>
       </div>
     </div>
   </main>
@@ -530,6 +531,7 @@
       <div class="flex-1">
         <img src="./public/assets/imgs/expowhat.png" alt="Expo site"
           class="rounded-2xl shadow-md w-full h-auto object-cover" />
+          <span id="featured"></span>
       </div>
 
     </div>
@@ -558,7 +560,7 @@
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Marine wellness clubhouse</li>
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Sustainable architecture</li>
           </ul>
-          <button class="w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl ">
+          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl ">
             Explore at expo
           </button>
         </div>
@@ -575,7 +577,7 @@
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Investment potential</li>
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium location</li>
           </ul>
-          <button class="w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
+          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
             Explore at expo
           </button>
         </div>
@@ -593,7 +595,7 @@
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Contemporary luxury</li>
             <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Future-ready design</li>
           </ul>
-          <button class="w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
+          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
             Explore at expo
           </button>
         </div>
@@ -604,7 +606,7 @@
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-  <footer class="bg-black text-white py-12 px-6">
+  <footer id="contactus" class="bg-black text-white py-12 px-6">
     <div class="max-w-7xl mx-auto">
       <div class="flex items-center space-x-3 mb-4">
         <img src="./public/logo-white.png" alt="EBG Realty Logo" class="h-28">

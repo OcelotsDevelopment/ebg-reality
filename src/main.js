@@ -3,14 +3,11 @@ import "./style.css";
 import "@fontsource/poppins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./feading";
+import "./bookForm"
 // import './curveCursol/curveCursol'
 
 const menuToggle = document.getElementById("menu-toggle");
 const mobileMenu = document.getElementById("mobile-menu");
-
-// menuToggle.addEventListener("click", () => {
-//   mobileMenu.classList.toggle("hidden");
-// });
 
 let isOpen = false;
 
@@ -47,4 +44,15 @@ document.addEventListener("click", (e) => {
   ) {
     toggleMenu();
   }
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(elem => {
+    elem.addEventListener('click', e => {
+        e.preventDefault();
+        document.querySelector(elem.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth',
+            offsetTop: 20
+        });
+    });
 });
