@@ -4,6 +4,7 @@ import "@fontsource/poppins";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./feading";
 import "./bookForm"
+import "./oppor"
 // import './curveCursol/curveCursol'
 
 const menuToggle = document.getElementById("menu-toggle");

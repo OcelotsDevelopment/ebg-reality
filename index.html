@@ -17,10 +17,11 @@
 
         <nav class="hidden md:flex gap-10 items-center text-white">
           <a href="#home" class="hover:text-primary transition">Home</a>
+          <a href="https://www.ebgrealty.in/" target="_blank" class="hover:text-primary transition">About Us</a>
           <a href="#attend" class="hover:text-primary transition">Why Attend</a>
           <a href="#featured" class="hover:text-primary transition">Featured</a>
           <a href="#contactus" class="hover:text-primary transition">Contact Us</a>
-          <button class="relative z-50 bap cursor-pointer bg-primary px-6 py-2 rounded-lg text-white">Buy Tickets</button>
+          <button class="relative z-50 bap cursor-pointer bg-primary px-6 py-2 rounded-lg text-white">Register Now</button>
         </nav>
 
         <!-- Hamburger for mobile -->
@@ -40,24 +41,24 @@
         <a href="#attend" class="block py-2">Why Attend</a>
         <a href="#featured" class="block py-2">Featured</a>
         <a href="#contactus" class="block py-2">Contact Us</a>
-        <button class="bap w-full bg-primary px-4 py-3 mt-3 rounded-lg">Buy Tickets</button>
+        <button class="bap w-full bg-primary px-4 py-3 mt-3 rounded-lg">Register Now</button>
       </div>
     </header>
 
     <!-- Background Overlay & Video -->
     <div class="absolute inset-0 z-10 bg-black/40"></div>
-    <video id="home" src="./public/assets/bg-video.mp4" class="absolute inset-0 w-full h-full object-cover z-0" autoplay muted
-      loop></video>
+    <video id="home" src="./public/assets/bg-video.mp4" class="absolute inset-0 w-full h-full object-cover z-0" autoplay
+      muted loop></video>
 
     <!-- Hero Text -->
     <div class="gfade relative z-20 flex flex-col items-center text-center justify-center px-6 pt-40 pb-20 md:pt-56">
       <p class="text-white text-lg sm:text-xl md:text-2xl">August 2–3, 2025, Vijayawada</p>
-      <h1 class="text-white font-bold text-3xl sm:text-5xl md:text-6xl mt-2">EBG Realty Luxury Expo</h1>
+      <h1 class="text-white font-bold text-3xl sm:text-5xl md:text-6xl mt-2">EBG Realty Expo</h1>
       <p class="text-white text-base sm:text-lg md:text-xl mt-4 max-w-xl">
         “Discover our signature developments, live project walkthroughs, VIP consultations & exclusive early-bird ticket
         access.”
       </p>
-      <button class="bap mt-6 bg-primary text-white px-6 py-3 rounded-lg">Buy Tickets</button>
+      <button class="bap mt-6 bg-primary text-white px-6 py-3 rounded-lg">Register Now</button>
     </div>
 
     <!-- Bottom Info Grid -->
@@ -85,7 +86,7 @@
         class="flex justify-between items-center border-b sm:border-b-0 sm:border-r border-[#464646] pb-6 sm:pb-0 sm:px-6">
         <div>
           <p class="font-semibold text-lg">2-3 August, 2025</p>
-          <p class="text-sm">10:00 AM - 06:00 PM</p>
+          <p class="text-sm">09:30 AM - 06:00 PM</p>
         </div>
         <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -97,7 +98,7 @@
       <!-- Companies -->
       <div class="flex justify-between items-center sm:pl-6">
         <div>
-          <p class="font-semibold text-lg">500+ Companies Listed</p>
+          <p class="font-semibold text-lg">100+ Projects</p>
           <p class="text-sm">100+ Joining Every Month</p>
         </div>
         <svg width="25" height="28" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -105,9 +106,9 @@
           <path fill="white"
             d="M12 0v28h2v-6h4v6h7V0H12zm10 2v2h-2V2h2zm0 4v2h-2V6h2zm0 4v2h-2v-2h2zm0 4v2h-2v-2h2zm0 4v2h-2v-2h2zm-6-12h2v2h-2V6zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2zm0 4h2v2h-2v-2z" />
         </svg>
-        <div id="attend" ></div>
       </div>
     </div>
+    <div id="attend"></div>
   </main>
 
 
@@ -128,7 +129,7 @@
           </div>
           <div class="text-left">
             <p class="text-sm text-gray-500 font-semibold">CURATED PROJECTS</p>
-            <p class="font-bold">100+ From India & UAE</p>
+            <p class="font-bold">100+ From India & Dubai</p>
             <p class="text-sm text-gray-500">Top-Tier Real Estate Listings</p>
           </div>
         </div>
@@ -321,7 +322,7 @@
 
           </div>
           <h3 class="text-lg font-semibold">India Cities</h3>
-          <p class="font-bold text-xl">Hyderabad, Mumbai, Goa, Vijayawada</p>
+          <p class="font-bold text-xl">Hyderabad, Mumbai, Goa</p>
           <p class="text-gray-500 text-base">Top growth locations</p>
         </div>
 
@@ -418,10 +419,10 @@
   </section>
 
   <section class="bg-gray-50 px-6 py-16">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold text-black mb-10">Properties across:</h2>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <!-- Residential Apartments -->
         <div class="gfade bg-white rounded-2xl shadow-md p-6">
           <div class="bg-orange-100 p-4 rounded-full w-fit mb-4">
@@ -445,7 +446,7 @@
           <div class="bg-orange-100 p-4 rounded-full w-fit mb-4">
             <img src="./public/assets/icons/holiday.png" alt="Villas" class="w-8 h-8" />
           </div>
-          <h3 class="text-xl font-bold">Holiday Villas</h3>
+          <h3 class="text-xl font-bold">Luxury Villas</h3>
           <p class="text-gray-600">Premium villas in scenic, coastal zones</p>
         </div>
 
@@ -498,7 +499,6 @@
 
   <section class="bg-gray-50 py-16 px-6">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10">
-
       <!-- Left Content -->
       <div class="flex-1">
         <h2 class="gfade text-3xl md:text-4xl font-bold text-black mb-6">
@@ -532,77 +532,301 @@
       <div class="flex-1 zoomimg">
         <img src="./public/assets/imgs/expowhat.png" alt="Expo site"
           class="rounded-2xl shadow-md w-full h-auto object-cover" />
-          <span id="featured"></span>
       </div>
-
+    </div>
+    <div class="w-full flex justify-center mt-8">
+      <button class="bap mt-6 bg-primary text-white px-6 py-3 rounded-lg">Register Now</button>
     </div>
   </section>
+  <span id="featured"></span>
 
 
   <section class="py-16 px-6 bg-white">
     <div class="max-w-7xl mx-auto text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-black mb-2">
-        Our Signature Developments
+        Our Flagship projects
       </h2>
       <p class="text-gray-600 text-lg">
         Explore our premier residential projects that define luxury living
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Card 1 -->
-      <div class="gfade bg-white rounded-xl shadow-md overflow-hidden border">
-        <img src="./public/assets/imgs/card1.png" alt="Flamingo Villas" class="w-full h-60 object-cover rounded-t-xl">
-        <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold text-black mb-1">Flamingo Villas</h3>
-          <p class="text-gray-600 mb-4">Coastal wellness community near Pulicat</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Eco-friendly design</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Marine wellness clubhouse</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Sustainable architecture</li>
-          </ul>
-          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl ">
-            Explore at expo
-          </button>
+    <div class="max-w-7xl mx-auto text-center relative">
+      <div class="swiper mySwiper ">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide h-[461px]">
+            <div class=" bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/1.jpg" alt="Flamingo Villas" class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Binghatti Aquarise</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Business Bay, Dubai</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium Residential
+                    Community</li>
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Luxury Wellness Facilities
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Serene Urban Living
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/2.jpg" alt="Chaturvatika" class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Binghatti Haven</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai Sports City,
+                  Dubai</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium Sports Residences
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Luxury Lifestyle Amenities
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Serene Modern Living</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/3.jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">DAMAC Chelsea Residence</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Central Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Urban Luxury Living</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Prime Downtown Location</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Modern Premium Amenities
+                  </li>
+                </ul>
+                <!-- <button
+                  class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
+                  Explore at expo
+                </button> -->
+              </div>
+            </div>
+          </div>
+
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/4.jpg" alt="Flamingo Villas" class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">DAMAC Riverside Views</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Waterfront Luxury Living
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Stunning Water Views</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> World-Class Amenities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/5.jpg" alt="Chaturvatika" class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Emaar Silva</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai Creek Harbour,
+                  UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Creek View Living</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Lush Jade Landscapes</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Smart Home Innovation</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/6.jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Emaar Vida Residences Hillside</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai Hills Estate, UAE
+                </p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Contemporary Creative Living
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Social Active Lifestyle</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Elegant Vida Style</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide h-[461px]">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border">
+              <img src="./public/assets/swip/1 (1).jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Floarea Skies</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Iconic Architectural Gem
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Balanced Scenic Landscaping
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Elevated Skyline Living</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/2 (1).jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Provenza Residences by IKR</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Mediterranean-Inspired
+                    Design</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium Lifestyle Amenities
+                  </li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Limited Luxury Residences
+                  </li>
+                </ul>
+                <!--  -->
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/3 (1).jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Sobha Central</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Central Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Central Dubai Living</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> World-Class Amenities</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Prime Location Access</li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/4 (1).jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Sobha Skyvue Stellar</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Dubai, UAE</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Panoramic City Views</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Luxury High-Rise Living</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> World-Class Facilities</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/krillam.jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Krillam </h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Mumbai</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Contemporary Design</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Smart Homes</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium Finishes</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Future Ready</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/chatuvatika.jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Chaturvatika</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Ongole</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Prime Location</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Modern Amenities</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Luxury Living</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Investment Grade</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/flamingo.jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Flamingo Villas</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Goa</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> 5.75 Acres</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> 3BHK-5BHK</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Wellness Living</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class=" swiper-slide ">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden border max-h-[461px]">
+              <img src="./public/assets/swip/4 (1).jpg" alt="Krillam Architectural Marvel"
+                class="w-full h-60 object-cover rounded-t-xl">
+              <div class="p-6 text-left">
+                <h3 class="text-xl font-semibold text-black mb-1">Carlton</h3>
+                <p class="text-gray-600 mb-4"><i class="fas fa-location-dot text-[#d19b62]"></i> Kerala</p>
+                <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Wellness Resorts</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Boutique Hotels</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Vacation Homes</li>
+                  <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium Spa</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="gfade bg-white rounded-xl shadow-md overflow-hidden border">
-        <img src="./public/assets/imgs/card2.png" alt="Chaturvatika" class="w-full h-60 object-cover rounded-t-xl">
-        <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold text-black mb-1">Chaturvatika</h3>
-          <p class="text-gray-600 mb-4">Prime-location urban residences</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Modern amenities</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Investment potential</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Premium location</li>
-          </ul>
-          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
-            Explore at expo
-          </button>
+      <div class="hidden md:block absolute top-1/2 -translate-y-1/2 -left-20 z-30">
+        <div class="swiper-button-prev p-6 cursor-pointer text-black">
+          <i class="fa-solid fa-arrow-left"></i>
         </div>
       </div>
-
-      <!-- Card 3 -->
-      <div class="gfade bg-white rounded-xl shadow-md overflow-hidden border">
-        <img src="./public/assets/imgs/card3.png" alt="Krillam Architectural Marvel"
-          class="w-full h-60 object-cover rounded-t-xl">
-        <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold text-black mb-1">Krillam Architectural Marvel</h3>
-          <p class="text-gray-600 mb-4">Smart homes with contemporary luxury</p>
-          <ul class="space-y-2 text-sm text-gray-700 mb-6">
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Smart home technology</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Contemporary luxury</li>
-            <li class="flex items-center"><span class="text-orange-500 mr-2">✔</span> Future-ready design</li>
-          </ul>
-          <button class="bap w-full bg-primary hover:bg-primary/75 cursor-pointer text-white font-medium py-2 rounded-xl">
-            Explore at expo
-          </button>
+      <div class="hidden md:block absolute top-1/2 -translate-y-1/2 -right-20 z-30">
+        <div class="swiper-button-next p-6 cursor-pointer text-black">
+          <i class="fa-solid fa-arrow-right"></i>
         </div>
       </div>
     </div>
+
+    <div class="w-full flex justify-center">
+      <button class="bap mt-6 bg-primary text-white px-6 py-3 rounded-lg">Register Now</button>
+    </div>
+
+
   </section>
+
 
   <!-- Font Awesome CDN -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -675,18 +899,18 @@
     </div>
 
     <!-- Footer Bottom -->
-    <div class="mt-10 border-t border-gray-800 pt-6 px-6 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 text-center md:text-left">
+    <div
+      class="mt-10 border-t border-gray-800 pt-6 px-6 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0 text-center md:text-left">
       <p>© 2025 EBG Realty. All rights reserved.</p>
-    
+
       <div class="flex flex-col md:flex-row gap-4 text-white font-semibold">
         <a href="#" class="hover:text-primary transition">Terms & Conditions</a>
         <a href="#" class="hover:text-primary transition">Privacy Policy</a>
         <a href="#" class="hover:text-primary transition">Disclaimer</a>
       </div>
     </div>
-    
-  </footer>
 
+  </footer>
 
   <script type="module" src="./src/main.js"></script>
 </body>

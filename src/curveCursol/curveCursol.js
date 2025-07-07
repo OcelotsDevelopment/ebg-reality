@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import './curveCursol.css'
+// import './curveCursol.css'
 
 const swiper = new Swiper('.swiper', {
     loop: true,

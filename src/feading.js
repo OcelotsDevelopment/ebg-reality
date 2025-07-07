@@ -22,7 +22,7 @@ gsap.utils.toArray(".gfade").forEach((el, i) => {
     y: 70,
     opacity: 0,
     duration: 1,
-    delay: i * 0.05, // stagger effect
+    delay: i * 0.01, // stagger effect
     ease: "power2.out",
     scrollTrigger: {
       trigger: el,
