@@ -339,23 +339,12 @@ document.addEventListener("DOMContentLoaded", function () {
     class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
     <div id="partnerForm"
       class="flex flex-col lg:flex-row  rounded-2xl overflow-hidden shadow-md p-2 bg-white relative">
-      <a id="closePartnerModal" class=" closse-button w-inline-block cursor-pointer absolute top-4 right-10"
-        onclick="document.getElementById('partnerModal')?.remove()">
-        <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g fill-rule="nonzero" fill="#333333">
-              <polygon
-                points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8">
-              </polygon>
-            </g>
-          </g>
-        </svg>
-      </a>
+      
       <!-- Sidebar Stepper -->
       <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 rounded-l-2xl md:min-w-[326px]">
         <img src="./public/logo-white.png" alt="EBG Realty" class="h-7 md:h-16" />
 
-        <div class="flex flex-row md:flex-col md:gap-8 mt-2.5 md:mt-12">
+        <div class="flex flex-row md:flex-col gap-3.5 md:gap-8 mt-5 md:mt-12">
           <!-- Step 1 -->
           <div class="flex items-center gap-4">
             <div class="w-5 h-5 rounded-full bg-[#D6A25A] flex items-center justify-center">
@@ -377,7 +366,19 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
 
       <!-- Form Area -->
-      <div class="w-full lg:w-2/3 bg-white px-6 py-5 overflow-y-scroll md:min-w-[717px]" style="height: calc(100vh - 100px);">
+      <div class="w-full lg:w-2/3 bg-white px-6 py-5 overflow-y-scroll md:min-w-[717px] relative" style="height: calc(100vh - 100px);">
+      <a id="closePartnerModal" class=" closse-button w-inline-block cursor-pointer absolute top-4 right-10 md:text-black text-white "
+        onclick="document.getElementById('partnerModal')?.remove()">
+        <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g fill-rule="nonzero" fill="#333333">
+              <polygon
+                points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8">
+              </polygon>
+            </g>
+          </g>
+        </svg>
+      </a>
         <form class="w-full max-w-3xl mx-auto ">
           <!-- Name + Mobile -->
           <div id="first" class="block space-y-4">
