@@ -338,10 +338,10 @@ document.addEventListener("DOMContentLoaded", function () {
   <div id="partnerModal"
     class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
     <div id="partnerForm"
-      class="flex flex-col lg:flex-row  rounded-2xl overflow-hidden shadow-md p-2 bg-white relative">
+      class="flex flex-col lg:flex-row  rounded-2xl overflow-hidden shadow-md md:p-2 bg-white relative">
       
       <!-- Sidebar Stepper -->
-      <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 rounded-l-2xl md:min-w-[326px]">
+      <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 md:rounded-l-2xl md:min-w-[326px]">
         <img src="./public/logo-white.png" alt="EBG Realty" class="h-7 md:h-16" />
 
         <div class="flex flex-row md:flex-col gap-3.5 md:gap-8 mt-5 md:mt-12">
