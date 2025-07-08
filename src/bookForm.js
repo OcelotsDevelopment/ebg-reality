@@ -2,6 +2,8 @@
 //   const button = document.querySelectorAll(".bap");
 //   console.log(button);
 
+// const { default: axios } = require("axios");
+
 //   const modal = /*html*/ `
 //   <div id="partnerModal"
 //     class="partner-modal fixed inset-0 bg-black/50 bg-opacity-40 flex justify-center items-center z-50">
@@ -331,6 +333,8 @@
   /* <img src="./public/logo-white.png" alt="EBG Realty" class="h-7 md:h-16" /> */
 }
 
+import axios from "axios";
+
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelectorAll(".bap");
   console.log(button);
@@ -407,19 +411,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 apply)</label>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" value="Investment in plots" />
+                  <input type="checkbox" name="propertyInterest" value="Investment_in_plots" />
                   <span class="text-[#6C6C6C]">Investment in plots</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" value="Investment in flats" />
+                  <input type="checkbox" name="propertyInterest" value="Investment_in_flats" />
                   <span class="text-[#6C6C6C]">Investment in flats</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" value="Fractional ownership" />
+                  <input type="checkbox" name="propertyInterest" value="Fractional_ownership" />
                   <span class="text-[#6C6C6C]">Fractional ownership</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" value="Overseas Dubai-based options with VISA benefits" />
+                  <input type="checkbox" name="propertyInterest" value="Overseas_Dubai-based_options_with_VISA_benefits" />
                   <span class="text-[#6C6C6C]">Overseas Dubai-based options with VISA benefits</span>
                 </label>
               </div>
@@ -429,7 +433,12 @@ document.addEventListener("DOMContentLoaded", function () {
             <!-- Investment Timeline -->
             <div>
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Investment Timeline *</label>
-              <input id="timeline" type="text" placeholder="e.g. Within 3-6 months" class="w-full px-4 py-3 rounded-md shadow " />
+              <select id="timeline" class="w-full px-4 py-3 rounded-md shadow ">
+                <option value="">Select Investment Timeline</option>
+                <option value="1 to 3" >1 to 3 Month's</option>
+                <option value="3 to 6" >3 to 6 Month's</option>
+                <option value="6 to 12" >6 to 12 Month's</option>
+              </select>
               <div id="timeline-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
 
@@ -438,10 +447,10 @@ document.addEventListener("DOMContentLoaded", function () {
               <label class="block font-semibold mb-1 text-[#6C6C6C]">Investment Capability *</label>
               <select id="investment" class="w-full px-4 py-3 rounded-md shadow ">
                 <option value="">Select Investment Range</option>
-                <option>Below ₹25 Lakhs</option>
-                <option>₹25L - ₹1 Cr</option>
-                <option>₹1 Cr - ₹5 Cr</option>
-                <option>₹5 Cr and above</option>
+                <option value="Below ₹25 Lakhs" >Below ₹25 Lakhs</option>
+                <option value="₹25L - ₹1 Cr" >₹25L - ₹1 Cr</option>
+                <option value="₹1 Cr - ₹5 Cr" >₹1 Cr - ₹5 Cr</option>
+                <option value="₹5 Cr and above" >₹5 Cr and above</option>
               </select>
               <div id="investment-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
@@ -480,6 +489,24 @@ document.addEventListener("DOMContentLoaded", function () {
               <div id="selectedSlot-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
 
+            <div>
+              <label class="block font-semibold mb-1 text-[#6C6C6C]">Peoples</label>
+              <select id="members" class="w-full px-4 py-3 rounded-md shadow ">
+                <option value="">Select how many members are?</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+              <div id="members-error" class="text-red-500 text-sm mt-1 hidden"></div>
+            </div>
+
             <!-- Submit -->
             <div>
               <button type="button" id="bookTicket"
@@ -500,11 +527,73 @@ document.addEventListener("DOMContentLoaded", function () {
   let mmobile;
   let memail;
   let mlocation;
-  let mpropertyInterest = [];
+  let mpropertyInterest;
   let mtimeline;
   let minvestment;
   let mselectedDate;
   let mselectedSlot;
+  let mmembers;
+
+  // razorpay
+  function openRazorpayCheckout(data) {
+    console.log(data);
+
+    const razorpayData = {
+      key: data.key, // Replace with your actual key
+      amount: data.amount, // in paise
+      currency: data.currency,
+      name: "Ebg Reality",
+      description: "EBG Reality Expo 2025",
+      order_id: data.orderId, // Generated from your backend
+      handler: function (response) {
+        console.log("Payment Success!", response);
+        // Prepare the payload
+        const payload = {
+          razorpay_order_id: response.razorpay_order_id,
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_signature: response.razorpay_signature,
+          name: mname + " " + mlastName,
+          email: memail,
+          members: mmembers, // assuming `members` is defined somewhere
+          ticketId: data.ticketId,
+          slote: mselectedSlot, // assuming `slote` is defined
+          sloteDate: mselectedDate, // assuming `sloteDate` is defined
+        };
+
+        // Send POST request to your backend
+        fetch("http://54.85.34.167/api/ticket/confirm-payment", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Payment confirmed and data saved!", data);
+            // You can redirect the user or show a success message
+          })
+          .catch((error) => {
+            console.error("Error confirming payment:", error);
+            // Show an error message to user
+          });
+      },
+      prefill: {
+        name: mname + " " + mlastName,
+        email: memail,
+        contact: mmobile,
+      },
+      notes: {
+        ticketId: data.ticketId,
+      },
+      theme: {
+        color: "#D09A61",
+      },
+    };
+
+    const rzp = new Razorpay(razorpayData);
+    rzp.open();
+  }
 
   button.forEach((btn) => {
     btn.addEventListener("click", function () {
@@ -525,32 +614,6 @@ document.addEventListener("DOMContentLoaded", function () {
             if (validateFirstForm()) {
               first.style.display = "none";
               second.style.display = "block";
-
-              // Update stepper visual state
-              const step1 =
-                document.querySelector(".bg-[#D6A25A]").parentElement;
-              const step2 = document.querySelector(".opacity-50");
-
-              step1.classList.add("opacity-50");
-              step2.classList.remove("opacity-50");
-              step2
-                .querySelector(".border-gray-400")
-                .classList.remove("border-gray-400");
-              step2
-                .querySelector(".w-5")
-                .classList.add(
-                  "bg-[#D6A25A]",
-                  "flex",
-                  "items-center",
-                  "justify-center"
-                );
-              step2.querySelector(".w-5").innerHTML = `
-                <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                    clip-rule="evenodd" />
-                </svg>
-              `;
             }
           });
 
@@ -558,41 +621,48 @@ document.addEventListener("DOMContentLoaded", function () {
           bookTicket.addEventListener("click", (e) => {
             e.preventDefault();
             if (validateSecondForm()) {
-              // alert("Ticket booked successfully!");
-              console.log({
-                mname,
-                mlastName,
-                mmobile,
-                memail,
-                mlocation: mlocation?.value,
-                mpropertyInterest: mpropertyInterest,
-                mtimeline,
-                minvestment,
-                mselectedDate,
-                mselectedSlot,
+              const values = [];
+              mpropertyInterest?.forEach((e) => {
+                if (e?.value) {
+                  values.push(e.value);
+                }
               });
-              console.log(typeof mpropertyInterest);
+              const piarr = values.join(", ");
 
-              // document.getElementById("partnerModal")?.remove();
-              axios.post("http://54.85.34.167/api/ticket/book", {
-                name: mname + " " + mlastName,
-                email: memail,
-                mobile: mmobile,
-                members: 1,
-                current_business_status: mstatus?.value,
-                current_business_name: mbusinessName,
-                sector_interest: msector,
-                timeline_for_starting_business: mtimeline,
-                investment_capability: minvestment,
-                slote: mselectedSlot,
-                sloteDate: mselectedDate,
-              }).then(res => {
-                console.log(res);
-                console.log("Booking done!", res);
-                document.getElementById("partnerModal").remove();
-                // Trigger Razorpay
-                openRazorpayCheckout(res.data);
-              })
+              axios
+                .post(
+                  // "http://54.85.34.167/api/realityTicket/book",
+                  "http://54.85.34.167/api/ticket/book",
+                  {
+                    // name: "goutham",
+                    // email: "goutham@gmail.com",
+                    // mobile: "9876543213",
+                    // members: 1,
+                    // current_business_status: "Yes",
+                    // current_business_name: "vishnu Ventures",
+                    // sector_interest: "EV, F&B, Education",
+                    // timeline_for_starting_business: "Within 6 months",
+                    // investment_capability: "50 Lakhs",
+                    // slote: "Slot 2",
+                    // sloteDate: "2025-07-23",
+
+                    name: mname + " " + mlastName,
+                    email: memail,
+                    mobile: mmobile,
+                    members: mmembers,
+                    property_location: mlocation?.value,
+                    investment_timeline: mtimeline,
+                    property_interest: piarr,
+                    investment_capability: minvestment,
+                    slote: mselectedSlot,
+                    sloteDate: mselectedDate,
+                  }
+                )
+                .then((res) => {
+                  document.getElementById("partnerModal").remove();
+                  openRazorpayCheckout(res.data);
+                  // Trigger Razorpay
+                });
             }
           });
 
@@ -751,11 +821,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear previous errors for second form
     clearError("selectedDate");
     clearError("selectedSlot");
+    clearError("members");
 
     let isValid = true;
 
     const selectedDate = document.getElementById("selectedDate").value;
     const selectedSlot = document.getElementById("selectedSlot").value;
+    const members = document.getElementById("members").value;
 
     // Check if date is selected
     if (!selectedDate) {
@@ -769,8 +841,14 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    if (!members) {
+      showError("members", "Please select a members");
+      isValid = false;
+    }
+
     mselectedDate = selectedDate;
     mselectedSlot = selectedSlot;
+    mmembers = members;
     return isValid;
   }
 
@@ -792,27 +870,3 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
-
-{
-  /* <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 md:rounded-l-2xl md:min-w-[326px]">
-        <div class="flex flex-row md:flex-col gap-3.5 md:gap-8 mt-5 md:mt-12">
-          <!-- Step 1 -->
-          <div class="flex items-center gap-4">
-            <div class="w-5 h-5 rounded-full bg-[#D6A25A] flex items-center justify-center">
-              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <p class="font-semibold text-sm md:text-lg">Personal Details</p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="flex items-center gap-4 opacity-50">
-            <div class="w-5 h-5 rounded-full border border-gray-400"></div>
-            <p class=" text-sm md:text-lg">Book Your Ticket</p>
-          </div>
-        </div>
-      </div> */
-}
