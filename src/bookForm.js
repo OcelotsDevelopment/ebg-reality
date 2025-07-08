@@ -536,15 +536,26 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // razorpay
   function openRazorpayCheckout(data) {
-    console.log(data);
+    console.log(data.orderId);
+    if (!data.orderId) {
+      console.error("Order ID is missing from backend response");
+      alert("Payment setup failed. Please try again.");
+      return;
+    }
+
+    if (!data.key || !data.amount) {
+      console.error("Required payment parameters are missing");
+      alert("Payment configuration error. Please try again.");
+      return;
+    }
 
     const razorpayData = {
-      key: data.key, // Replace with your actual key
-      amount: data.amount, // in paise
-      currency: data.currency,
+      key: data.key,
+      amount: data.amount,
+      currency: data.currency || "INR",
       name: "Ebg Reality",
       description: "EBG Reality Expo 2025",
-      order_id: data.orderId, // Generated from your backend
+      order_id: data.orderId, // This should be valid now
       handler: function (response) {
         console.log("Payment Success!", response);
         // Prepare the payload
@@ -634,28 +645,28 @@ document.addEventListener("DOMContentLoaded", function () {
                   // "http://54.85.34.167/api/realityTicket/book",
                   "http://54.85.34.167/api/ticket/book",
                   {
-                    // name: "goutham",
-                    // email: "goutham@gmail.com",
-                    // mobile: "9876543213",
-                    // members: 1,
-                    // current_business_status: "Yes",
-                    // current_business_name: "vishnu Ventures",
-                    // sector_interest: "EV, F&B, Education",
-                    // timeline_for_starting_business: "Within 6 months",
-                    // investment_capability: "50 Lakhs",
-                    // slote: "Slot 2",
-                    // sloteDate: "2025-07-23",
+                    name: "goutham",
+                    email: "goutham@gmail.com",
+                    mobile: "9876543213",
+                    members: 1,
+                    current_business_status: "Yes",
+                    current_business_name: "vishnu Ventures",
+                    sector_interest: "EV, F&B, Education",
+                    timeline_for_starting_business: "Within 6 months",
+                    investment_capability: "50 Lakhs",
+                    slote: "Slot 2",
+                    sloteDate: "2025-07-23",
 
-                    name: mname + " " + mlastName,
-                    email: memail,
-                    mobile: mmobile,
-                    members: mmembers,
-                    property_location: mlocation?.value,
-                    investment_timeline: mtimeline,
-                    property_interest: piarr,
-                    investment_capability: minvestment,
-                    slote: mselectedSlot,
-                    sloteDate: mselectedDate,
+                    // name: mname + " " + mlastName,
+                    // email: memail,
+                    // mobile: mmobile,
+                    // members: Number(mmembers),
+                    // property_location: mlocation?.value,
+                    // investment_timeline: mtimeline,
+                    // property_interest: piarr,
+                    // investment_capability: minvestment,
+                    // slote: mselectedSlot,
+                    // sloteDate: mselectedDate,
                   }
                 )
                 .then((res) => {
