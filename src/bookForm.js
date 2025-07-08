@@ -137,7 +137,6 @@
 //             </div>
 //           </div>
 
-
 //           <div id="second" class="hidden ">
 //             <!-- Investment Capability -->
 //             <div>
@@ -242,7 +241,7 @@
 //       // alert("Please enter your name");
 //       document.getElementById("userName").style.border = "2px solid red"
 //       console.log("sdafasd");
-      
+
 //       document.getElementById("userName").focus();
 //       return false;
 //     }
@@ -281,7 +280,6 @@
 //       // alert("Please select your current business status");
 //       return false;
 //     }
-
 
 //     // Check if sector is selected
 //     if (!sector) {
@@ -329,6 +327,9 @@
 //   }
 // });
 
+{
+  /* <img src="./public/logo-white.png" alt="EBG Realty" class="h-7 md:h-16" /> */
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   const button = document.querySelectorAll(".bap");
@@ -341,45 +342,22 @@ document.addEventListener("DOMContentLoaded", function () {
       class="flex flex-col lg:flex-row  rounded-2xl overflow-hidden shadow-md md:p-2 bg-white relative">
       
       <!-- Sidebar Stepper -->
-      <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 md:rounded-l-2xl md:min-w-[326px]">
-        <img src="./public/logo-white.png" alt="EBG Realty" class="h-7 md:h-16" />
-
-        <div class="flex flex-row md:flex-col gap-3.5 md:gap-8 mt-5 md:mt-12">
-          <!-- Step 1 -->
-          <div class="flex items-center gap-4">
-            <div class="w-5 h-5 rounded-full bg-[#D6A25A] flex items-center justify-center">
-              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
-                  clip-rule="evenodd" />
-              </svg>
-            </div>
-            <p class="font-semibold text-sm md:text-lg">Personal Details</p>
-          </div>
-
-          <!-- Step 2 -->
-          <div class="flex items-center gap-4 opacity-50">
-            <div class="w-5 h-5 rounded-full border border-gray-400"></div>
-            <p class=" text-sm md:text-lg">Book Your Ticket</p>
-          </div>
-        </div>
-      </div>
 
       <!-- Form Area -->
-      <div class="w-full lg:w-2/3 bg-white px-6 py-5 overflow-y-scroll md:min-w-[717px] relative" style="height: calc(100vh - 100px);">
-      <a id="closePartnerModal" class=" closse-button w-inline-block cursor-pointer absolute top-4 right-10 md:text-black text-white "
-        onclick="document.getElementById('partnerModal')?.remove()">
-        <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
-          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-            <g fill-rule="nonzero" fill="#333333">
-              <polygon
-                points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8">
-              </polygon>
+      <div class="w-full bg-white px-6 py-5 overflow-y-scroll md:w-[617px] relative" style="height: calc(100vh - 100px);">
+        <a id="closePartnerModal" class=" closse-button w-inline-block cursor-pointer absolute top-4 right-10 md:text-black text-white "
+          onclick="document.getElementById('partnerModal')?.remove()">
+          <svg class="cart-closer" width="16px" height="16px" viewBox="0 0 16 16">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g fill-rule="nonzero" fill="#333333">
+                <polygon
+                  points="6.23223305 8 0.616116524 13.6161165 2.38388348 15.3838835 8 9.76776695 13.6161165 15.3838835 15.3838835 13.6161165 9.76776695 8 15.3838835 2.38388348 13.6161165 0.616116524 8 6.23223305 2.38388348 0.616116524 0.616116524 2.38388348 6.23223305 8">
+                </polygon>
+              </g>
             </g>
-          </g>
-        </svg>
-      </a>
-        <form class="w-full max-w-3xl mx-auto ">
+          </svg>
+        </a>
+        <form class="w-full mx-auto ">
           <!-- Name + Mobile -->
           <div id="first" class="block space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -412,11 +390,11 @@ document.addEventListener("DOMContentLoaded", function () {
               <label class="block font-semibold mb-2 text-[#6C6C6C]">Preferred Property Location *</label>
               <div class="flex gap-6">
                 <label class="flex items-center gap-2">
-                  <input type="radio" name="location" />
+                  <input type="radio" name="location" value="Hyderabad" />
                   <span class="text-[#6C6C6C]">Hyderabad</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="radio" name="location" />
+                  <input type="radio" name="location" value="Dubai" />
                   <span class="text-[#6C6C6C]">Dubai</span>
                 </label>
               </div>
@@ -429,19 +407,19 @@ document.addEventListener("DOMContentLoaded", function () {
                 apply)</label>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" />
+                  <input type="checkbox" name="propertyInterest" value="Investment in plots" />
                   <span class="text-[#6C6C6C]">Investment in plots</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" />
+                  <input type="checkbox" name="propertyInterest" value="Investment in flats" />
                   <span class="text-[#6C6C6C]">Investment in flats</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" />
+                  <input type="checkbox" name="propertyInterest" value="Fractional ownership" />
                   <span class="text-[#6C6C6C]">Fractional ownership</span>
                 </label>
                 <label class="flex items-center gap-2">
-                  <input type="checkbox" name="propertyInterest" />
+                  <input type="checkbox" name="propertyInterest" value="Overseas Dubai-based options with VISA benefits" />
                   <span class="text-[#6C6C6C]">Overseas Dubai-based options with VISA benefits</span>
                 </label>
               </div>
@@ -517,6 +495,17 @@ document.addEventListener("DOMContentLoaded", function () {
   </div>
   `;
 
+  let mname;
+  let mlastName;
+  let mmobile;
+  let memail;
+  let mlocation;
+  let mpropertyInterest = [];
+  let mtimeline;
+  let minvestment;
+  let mselectedDate;
+  let mselectedSlot;
+
   button.forEach((btn) => {
     btn.addEventListener("click", function () {
       document.body.insertAdjacentHTML("beforeend", modal);
@@ -536,16 +525,26 @@ document.addEventListener("DOMContentLoaded", function () {
             if (validateFirstForm()) {
               first.style.display = "none";
               second.style.display = "block";
-              
+
               // Update stepper visual state
-              const step1 = document.querySelector('.bg-[#D6A25A]').parentElement;
-              const step2 = document.querySelector('.opacity-50');
-              
-              step1.classList.add('opacity-50');
-              step2.classList.remove('opacity-50');
-              step2.querySelector('.border-gray-400').classList.remove('border-gray-400');
-              step2.querySelector('.w-5').classList.add('bg-[#D6A25A]', 'flex', 'items-center', 'justify-center');
-              step2.querySelector('.w-5').innerHTML = `
+              const step1 =
+                document.querySelector(".bg-[#D6A25A]").parentElement;
+              const step2 = document.querySelector(".opacity-50");
+
+              step1.classList.add("opacity-50");
+              step2.classList.remove("opacity-50");
+              step2
+                .querySelector(".border-gray-400")
+                .classList.remove("border-gray-400");
+              step2
+                .querySelector(".w-5")
+                .classList.add(
+                  "bg-[#D6A25A]",
+                  "flex",
+                  "items-center",
+                  "justify-center"
+                );
+              step2.querySelector(".w-5").innerHTML = `
                 <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd"
                     d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
@@ -559,8 +558,41 @@ document.addEventListener("DOMContentLoaded", function () {
           bookTicket.addEventListener("click", (e) => {
             e.preventDefault();
             if (validateSecondForm()) {
-              alert("Ticket booked successfully!");
-              document.getElementById("partnerModal")?.remove();
+              // alert("Ticket booked successfully!");
+              console.log({
+                mname,
+                mlastName,
+                mmobile,
+                memail,
+                mlocation: mlocation?.value,
+                mpropertyInterest: mpropertyInterest,
+                mtimeline,
+                minvestment,
+                mselectedDate,
+                mselectedSlot,
+              });
+              console.log(typeof mpropertyInterest);
+
+              // document.getElementById("partnerModal")?.remove();
+              axios.post("http://54.85.34.167/api/ticket/book", {
+                name: mname + " " + mlastName,
+                email: memail,
+                mobile: mmobile,
+                members: 1,
+                current_business_status: mstatus?.value,
+                current_business_name: mbusinessName,
+                sector_interest: msector,
+                timeline_for_starting_business: mtimeline,
+                investment_capability: minvestment,
+                slote: mselectedSlot,
+                sloteDate: mselectedDate,
+              }).then(res => {
+                console.log(res);
+                console.log("Booking done!", res);
+                document.getElementById("partnerModal").remove();
+                // Trigger Razorpay
+                openRazorpayCheckout(res.data);
+              })
             }
           });
 
@@ -580,53 +612,64 @@ document.addEventListener("DOMContentLoaded", function () {
   // Helper function to show error
   function showError(fieldId, message) {
     const field = document.getElementById(fieldId);
-    const errorDiv = document.getElementById(fieldId + '-error');
-    
+    const errorDiv = document.getElementById(fieldId + "-error");
+
     if (field) {
       field.style.border = "2px solid #ef4444";
       field.style.borderRadius = "8px";
     }
-    
+
     if (errorDiv) {
       errorDiv.textContent = message;
-      errorDiv.classList.remove('hidden');
+      errorDiv.classList.remove("hidden");
     }
   }
 
   // Helper function to clear error
   function clearError(fieldId) {
     const field = document.getElementById(fieldId);
-    const errorDiv = document.getElementById(fieldId + '-error');
-    
+    const errorDiv = document.getElementById(fieldId + "-error");
+
     if (field) {
       field.style.border = "";
       field.style.borderRadius = "";
     }
-    
+
     if (errorDiv) {
       errorDiv.textContent = "";
-      errorDiv.classList.add('hidden');
+      errorDiv.classList.add("hidden");
     }
   }
 
   // Helper function to clear all errors
   function clearAllErrors() {
-    const errorFields = ['userName', 'lastName', 'mobileNumber', 'emailId', 'location', 'propertyInterest', 'timeline', 'investment'];
-    errorFields.forEach(fieldId => clearError(fieldId));
+    const errorFields = [
+      "userName",
+      "lastName",
+      "mobileNumber",
+      "emailId",
+      "location",
+      "propertyInterest",
+      "timeline",
+      "investment",
+    ];
+    errorFields.forEach((fieldId) => clearError(fieldId));
   }
 
   function validateFirstForm() {
     // Clear all previous errors
     clearAllErrors();
-    
+
     let isValid = true;
-    
+
     const name = document.getElementById("userName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const mobile = document.getElementById("mobileNumber").value.trim();
     const email = document.getElementById("emailId").value.trim();
     const location = document.querySelector('input[name="location"]:checked');
-    const propertyInterest = document.querySelector('input[name="propertyInterest"]:checked');
+    const propertyInterest = document.querySelectorAll(
+      'input[name="propertyInterest"]:checked'
+    );
     const timeline = document.getElementById("timeline").value.trim();
     const investment = document.getElementById("investment").value.trim();
 
@@ -673,7 +716,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check if property interest is selected
     if (!propertyInterest) {
-      showError("propertyInterest", "Please select at least one property interest");
+      showError(
+        "propertyInterest",
+        "Please select at least one property interest"
+      );
       isValid = false;
     }
 
@@ -689,6 +735,15 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    mname = name;
+    mlastName = lastName;
+    mmobile = mobile;
+    memail = email;
+    mlocation = location;
+    mpropertyInterest = propertyInterest;
+    mtimeline = timeline;
+    minvestment = investment;
+
     return isValid;
   }
 
@@ -696,9 +751,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear previous errors for second form
     clearError("selectedDate");
     clearError("selectedSlot");
-    
+
     let isValid = true;
-    
+
     const selectedDate = document.getElementById("selectedDate").value;
     const selectedSlot = document.getElementById("selectedSlot").value;
 
@@ -714,24 +769,50 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
+    mselectedDate = selectedDate;
+    mselectedSlot = selectedSlot;
     return isValid;
   }
 
   // Add input event listeners to clear errors on user input
-  document.addEventListener('input', function(e) {
-    if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') {
+  document.addEventListener("input", function (e) {
+    if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") {
       clearError(e.target.id);
     }
   });
 
   // Add change event listeners for radio buttons and checkboxes
-  document.addEventListener('change', function(e) {
-    if (e.target.type === 'radio' || e.target.type === 'checkbox') {
-      if (e.target.name === 'location') {
-        clearError('location');
-      } else if (e.target.name === 'propertyInterest') {
-        clearError('propertyInterest');
+  document.addEventListener("change", function (e) {
+    if (e.target.type === "radio" || e.target.type === "checkbox") {
+      if (e.target.name === "location") {
+        clearError("location");
+      } else if (e.target.name === "propertyInterest") {
+        clearError("propertyInterest");
       }
     }
   });
 });
+
+{
+  /* <div class="bg-black text-white w-full lg:w-1/3 p-8 flex flex-col items-start  md:gap-8 md:rounded-l-2xl md:min-w-[326px]">
+        <div class="flex flex-row md:flex-col gap-3.5 md:gap-8 mt-5 md:mt-12">
+          <!-- Step 1 -->
+          <div class="flex items-center gap-4">
+            <div class="w-5 h-5 rounded-full bg-[#D6A25A] flex items-center justify-center">
+              <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd"
+                  d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 4.707 9.293a1 1 0 00-1.414 1.414l4 4a1 1 0 001.414 0l8-8a1 1 0 000-1.414z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <p class="font-semibold text-sm md:text-lg">Personal Details</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="flex items-center gap-4 opacity-50">
+            <div class="w-5 h-5 rounded-full border border-gray-400"></div>
+            <p class=" text-sm md:text-lg">Book Your Ticket</p>
+          </div>
+        </div>
+      </div> */
+}
