@@ -20,3 +20,14 @@ const swiper = new Swiper('.mySwiper', {
     },
   },
 });
+
+
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/food.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/hotel.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/dealer.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/health.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/education.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/commerce.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/auto.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/speciality.jpg
+// https://www.franchiseindia.net/tamil-nadu/fro/assets/imgs/fashion.jpg
