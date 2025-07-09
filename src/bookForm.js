@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", function () {
         };
 
         // Send POST request to your backend
-        fetch("http://54.85.34.167/api/ticket/confirm-payment", {
+        fetch("https://apiexpo.franchiseworld.com/api/ticket/confirm-payment", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -271,6 +271,54 @@ document.addEventListener("DOMContentLoaded", function () {
     const rzp = new Razorpay(razorpayData);
     rzp.open();
   }
+
+  const submitEBGRealityExpoForm = (formData) => {
+    return new Promise((resolve, reject) => {
+      // Create a hidden form element
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = 'https://forms.zohopublic.com/ebikegohyd1/form/EBGRealityExpo2025/formperma/rPZmWYwQX6lxYgnalWru7kNfYzGgG8A5uFwAXcViHN0/htmlRecords/submit';
+      form.enctype = 'multipart/form-data';
+      form.style.display = 'none';
+      
+      // Add all form fields
+      const fields = {
+        Name_First: formData.firstName,
+        Name_Last: formData.lastName,
+        PhoneNumber_countrycode: formData.phoneNumber,
+        Email: formData.email,
+        Dropdown1: formData.preferredLocation || '-Select-',
+        SingleLine2: formData.investmentTimeline || '',
+        SingleLine: formData.propertyInterest || '',
+        Dropdown: formData.investmentCapability || '-Select-',
+        SingleLine3: formData.selectDate || '',
+        SingleLine4: formData.slots || '',
+        SingleLine5: formData.members || '',
+        SingleLine6: formData.tokenId || '',
+        SingleLine7: formData.status || '',
+        zf_referrer_name: formData.referrerName || '',
+        zf_redirect_url: formData.redirectUrl || '',
+        zc_gad: formData.gclid || ''
+      };
+      
+      // Create input elements for each field
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = name;
+        input.value = value;
+        form.appendChild(input);
+      });
+      
+      // Add form to body and submit
+      document.body.appendChild(form);
+      form.submit();
+      
+      // Clean up
+      document.body.removeChild(form);
+      resolve({ success: true, message: 'Form submitted successfully' });
+    });
+  };
 
   button.forEach((btn) => {
     btn.addEventListener("click", function () {
@@ -306,40 +354,53 @@ document.addEventListener("DOMContentLoaded", function () {
               });
               const piarr = values.join(", ");
 
-              axios
-                .post(
-                  // "http://54.85.34.167/api/realityTicket/book",
-                  "http://54.85.34.167/api/ticket/book",
-                  {
-                    name: "goutham",
-                    email: "goutham@gmail.com",
-                    mobile: "9876543213",
-                    members: 1,
-                    current_business_status: "Yes",
-                    current_business_name: "vishnu Ventures",
-                    sector_interest: "EV, F&B, Education",
-                    timeline_for_starting_business: "Within 6 months",
-                    investment_capability: "50 Lakhs",
-                    slote: "Slot 2",
-                    sloteDate: "2025-07-23",
+              // axios
+              //   .post(
+              //     "https://apiexpo.franchiseworld.com/api/realityTicket/book",
+              //     {
+              //       name: mname + " " + mlastName,
+              //       email: memail,
+              //       mobile: mmobile,
+              //       members: Number(mmembers),
+              //       property_location: mlocation?.value,
+              //       investment_timeline: mtimeline,
+              //       property_interest: piarr,
+              //       investment_capability: minvestment,
+              //       slote: mselectedSlot,
+              //       sloteDate: mselectedDate,
+              //     }
+              //   )
+              //   .then((res) => {
+              //     document.getElementById("partnerModal").remove();
+              //     openRazorpayCheckout(res.data);
+              //     // Trigger Razorpay
+              //   });
 
-                    // name: mname + " " + mlastName,
-                    // email: memail,
-                    // mobile: mmobile,
-                    // members: Number(mmembers),
-                    // property_location: mlocation?.value,
-                    // investment_timeline: mtimeline,
-                    // property_interest: piarr,
-                    // investment_capability: minvestment,
-                    // slote: mselectedSlot,
-                    // sloteDate: mselectedDate,
-                  }
-                )
-                .then((res) => {
-                  document.getElementById("partnerModal").remove();
-                  openRazorpayCheckout(res.data);
-                  // Trigger Razorpay
-                });
+                const exampleFormData = {
+                  firstName: mname,
+                  lastName: mlastName,
+                  phoneNumber: mmobile,
+                  email: memail,
+                  preferredLocation: mlocation?.value, // or 'Dubai'
+                  investmentTimeline: mtimeline,
+                  propertyInterest: piarr,
+                  investmentCapability: minvestment,
+                  selectDate: mselectedDate,
+                  slots: mselectedSlot,
+                  members: mmembers,
+                  tokenId: 'TKN123456',
+                  status: 'Active'
+                };
+                
+                // Call the function
+                submitEBGRealityExpoForm(exampleFormData)
+                  .then(result => {
+                    if (result.success) {
+                      console.log('Form submitted successfully:', result);
+                    } else {
+                      console.error('Form submission failed:', result.error);
+                    }
+                  });
             }
           });
 

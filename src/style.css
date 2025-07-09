@@ -8,3 +8,22 @@ body {
   --color-primary: #D09A61;
   --color-secondary: #F8F0E3; 
 }
+
+.countdown-banner {
+  background-color: #D4AF37;
+  /* Equivalent to Tailwind's yellow-600 */
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 9999;
+}
+
+.countdown-time {
+  margin-left: 8px;
+  font-weight: 700;
+}

@@ -57,3 +57,23 @@ document.querySelectorAll('a[href^="#"]').forEach(elem => {
         });
     });
 });
+
+function updateCountdown() {
+  const endDate = new Date("July 30, 2025 23:59:59").getTime();
+  const now = new Date().getTime();
+  const timeLeft = endDate - now;
+
+  if (timeLeft <= 0) {
+      document.getElementById("ebg-timer").textContent = "Offer Closed";
+      return;
+  }
+
+  const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+  const seconds = Math.floor((timeLeft / 1000) % 60);
+
+  document.getElementById("ebg-timer").textContent = `${hours} HRS ${minutes} MINS ${seconds} SECS`;
+}
+
+updateCountdown(); // initial call
+setInterval(updateCountdown, 1000);

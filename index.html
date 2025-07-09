@@ -4,16 +4,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>EBG Reality</title>
   <link rel="shortcut icon" href="https://www.ebgrealty.in/icon.svg" type="image/x-icon">
+  <link rel="stylesheet" href="./src/slider.css">
 </head>
 
 <body>
+
+
   <main class="relative w-full overflow-hidden min-h-screen">
+    <div class="countdown-banner">
+      <span>⚡ Early Bird Offer Ends In:</span>
+      <span id="ebg-timer" class="countdown-time">13 HRS 0 MINS 49 SECS</span>
+  </div>
     <!-- Header (with hamburger toggle already included) -->
-    <header class="absolute top-0 left-0 right-0 z-50 bg-white/15">
+    <header class="absolute top-8 left-0 right-0 z-50 bg-white/15">
       <div class="flex justify-between items-center px-6 py-4 md:px-10">
-        <img src="./public/logo-white.png" alt="Logo" class="h-12 md:h-14">
+        <img loading="lazy" src="./public/logo-white.png" alt="Logo" class="h-12 md:h-14">
 
         <nav class="hidden md:flex gap-10 items-center text-white">
           <a href="#home" class="hover:text-primary transition">Home</a>
@@ -71,7 +78,7 @@
         class="flex justify-between items-center border-b sm:border-b-0 sm:border-r border-[#464646] pb-6 sm:pb-0 sm:pr-6">
         <div>
           <p class="font-semibold text-lg">Location</p>
-          <p class="text-sm">Vijayawada, Andhra Pradesh</p>
+          <p class="text-sm">Novotel Vijayawada Varun, Andhra Pradesh</p>
         </div>
         <svg width="22" height="26" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -512,7 +519,7 @@
         <ul class="gfade space-y-4 text-lg">
           <li class="flex items-start gap-3">
             <span class="w-3 h-3 mt-2 rounded-full bg-yellow-600"></span>
-            <span class=" text-gray-800">Investor Welcome Kit</span>
+            <span class=" text-gray-800">Golden Visa Process</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="w-3 h-3 mt-2 rounded-full bg-yellow-600"></span>
@@ -520,7 +527,7 @@
           </li>
           <li class="flex items-start gap-3">
             <span class="w-3 h-3 mt-2 rounded-full bg-yellow-600"></span>
-            <span class="text-gray-800">Legal &amp; Loan Assistance Counters</span>
+            <span class="text-gray-800">International Properties at Lowest Price</span>
           </li>
           <li class="flex items-start gap-3">
             <span class="w-3 h-3 mt-2 rounded-full bg-yellow-600"></span>
@@ -544,6 +551,57 @@
     </div>
   </section>
   <span id="featured"></span>
+
+  <section class="pt-16 my-10">
+    <p class="text-center text-2xl lg:text-4xl font-semibold mb-10">Our Brands</p>
+    <div class=" mx-2">
+      <div class="sliders">
+        <div class="slide-track">
+          <div class="slide">
+            <div class="flex items-center h-full">
+              <img src="assets/partner-logo/flamingo.png" alt="" />
+            </div>
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/carlton.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/krillam.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/DAMAC Chelsea Residence.webp" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/Sainath.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/Provenza Residences by IKR.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/sobha_realty-.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/vajram.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/Floarea Skies.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/flamingo.png" alt="" class="h-16" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/ebygo.png" alt="" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/carlton.png" alt="" class="h-10" />
+          </div>
+          <div class="slide">
+            <img src="assets/partner-logo/carlton.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <section class="py-16 px-6 bg-white">
