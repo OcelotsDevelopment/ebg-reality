@@ -59,7 +59,7 @@ document.querySelectorAll('a[href^="#"]').forEach(elem => {
 });
 
 function updateCountdown() {
-  const endDate = new Date("July 30, 2025 23:59:59").getTime();
+  const endDate = new Date("August 02, 2025 23:59:59").getTime();
   const now = new Date().getTime();
   const timeLeft = endDate - now;
 
@@ -68,11 +68,12 @@ function updateCountdown() {
       return;
   }
 
+  const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
   const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
   const seconds = Math.floor((timeLeft / 1000) % 60);
 
-  document.getElementById("ebg-timer").textContent = `${hours} HRS ${minutes} MINS ${seconds} SECS`;
+  document.getElementById("ebg-timer").textContent = `${days} Days ${hours} Hr ${minutes} Min ${seconds} Sec`;
 }
 
 updateCountdown(); // initial call

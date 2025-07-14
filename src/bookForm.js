@@ -59,8 +59,8 @@ document.addEventListener("DOMContentLoaded", function () {
               <label class="block font-semibold mb-2 text-[#6C6C6C]">Preferred Property Location *</label>
               <div class="flex gap-6">
                 <label class="flex items-center gap-2">
-                  <input type="radio" name="location" value="Hyderabad" />
-                  <span class="text-[#6C6C6C]">Hyderabad</span>
+                  <input type="radio" name="location" value="India" />
+                  <span class="text-[#6C6C6C]">India</span>
                 </label>
                 <label class="flex items-center gap-2">
                   <input type="radio" name="location" value="Dubai" />
@@ -154,29 +154,18 @@ document.addEventListener("DOMContentLoaded", function () {
               <div id="selectedSlot-error" class="text-red-500 text-sm mt-1 hidden"></div>
             </div>
 
-            <div>
-              <label class="block font-semibold mb-1 text-[#6C6C6C]">Peoples</label>
-              <select id="members" class="w-full px-4 py-3 rounded-md shadow ">
-                <option value="">Select how many members are?</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-              <div id="members-error" class="text-red-500 text-sm mt-1 hidden"></div>
-            </div>
-
             <!-- Submit -->
             <div>
               <button type="button" id="bookTicket"
-                class="w-full bg-[#D6A25A] text-white py-3 rounded-md font-semibold hover:bg-[#b98545] transition">
-                Submit
+                class="w-full bg-[#D6A25A] text-white py-3 rounded-md font-semibold hover:bg-[#b98545] transition cursor-pointer">
+                <span class="btn-text">Book Ticket Now</span>
+                <span class="loading-spinner hidden ml-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                       stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                       class="loading-spinner">
+                      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
+                  </svg>
+                </span>
               </button>
             </div>
           </div>
@@ -275,48 +264,49 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitEBGRealityExpoForm = (formData) => {
     return new Promise((resolve, reject) => {
       // Create a hidden form element
-      const form = document.createElement('form');
-      form.method = 'POST';
-      form.action = 'https://forms.zohopublic.com/ebikegohyd1/form/EBGRealityExpo2025/formperma/rPZmWYwQX6lxYgnalWru7kNfYzGgG8A5uFwAXcViHN0/htmlRecords/submit';
-      form.enctype = 'multipart/form-data';
-      form.style.display = 'none';
-      
+      const form = document.createElement("form");
+      form.method = "POST";
+      form.action =
+        "https://forms.zohopublic.com/ebikegohyd1/form/EBGRealityExpo2025/formperma/rPZmWYwQX6lxYgnalWru7kNfYzGgG8A5uFwAXcViHN0/htmlRecords/submit";
+      form.enctype = "multipart/form-data";
+      form.style.display = "none";
+
       // Add all form fields
       const fields = {
         Name_First: formData.firstName,
         Name_Last: formData.lastName,
         PhoneNumber_countrycode: formData.phoneNumber,
         Email: formData.email,
-        Dropdown1: formData.preferredLocation || '-Select-',
-        SingleLine2: formData.investmentTimeline || '',
-        SingleLine: formData.propertyInterest || '',
-        Dropdown: formData.investmentCapability || '-Select-',
-        SingleLine3: formData.selectDate || '',
-        SingleLine4: formData.slots || '',
-        SingleLine5: formData.members || '',
-        SingleLine6: formData.tokenId || '',
-        SingleLine7: formData.status || '',
-        zf_referrer_name: formData.referrerName || '',
-        zf_redirect_url: formData.redirectUrl || '',
-        zc_gad: formData.gclid || ''
+        Dropdown1: formData.preferredLocation || "-Select-",
+        SingleLine2: formData.investmentTimeline || "",
+        SingleLine: formData.propertyInterest || "",
+        Dropdown: formData.investmentCapability || "-Select-",
+        SingleLine3: formData.selectDate || "",
+        SingleLine4: formData.slots || "",
+        SingleLine5: formData.members || "",
+        SingleLine6: formData.tokenId || "",
+        SingleLine7: formData.status || "",
+        zf_referrer_name: formData.referrerName || "",
+        zf_redirect_url: formData.redirectUrl || "",
+        zc_gad: formData.gclid || "",
       };
-      
+
       // Create input elements for each field
       Object.entries(fields).forEach(([name, value]) => {
-        const input = document.createElement('input');
-        input.type = 'hidden';
+        const input = document.createElement("input");
+        input.type = "hidden";
         input.name = name;
         input.value = value;
         form.appendChild(input);
       });
-      
+
       // Add form to body and submit
       document.body.appendChild(form);
       form.submit();
-      
+
       // Clean up
       document.body.removeChild(form);
-      resolve({ success: true, message: 'Form submitted successfully' });
+      resolve({ success: true, message: "Form submitted successfully" });
     });
   };
 
@@ -331,6 +321,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const second = document.getElementById("second");
         const next = document.getElementById("next");
         const bookTicket = document.getElementById("bookTicket");
+        // const submitBtn = document.querySelector("#bookTicket");
+        const spinner = document.querySelector(".loading-spinner");
+        const btnText = document.querySelector(".btn-text");
 
         if (form) {
           // Next button click validation
@@ -346,6 +339,9 @@ document.addEventListener("DOMContentLoaded", function () {
           bookTicket.addEventListener("click", (e) => {
             e.preventDefault();
             if (validateSecondForm()) {
+              bookTicket.disabled = true;
+              spinner.classList.remove("hidden");
+              btnText.style.display = "none";
               const values = [];
               mpropertyInterest?.forEach((e) => {
                 if (e?.value) {
@@ -354,53 +350,33 @@ document.addEventListener("DOMContentLoaded", function () {
               });
               const piarr = values.join(", ");
 
-              // axios
-              //   .post(
-              //     "https://apiexpo.franchiseworld.com/api/realityTicket/book",
-              //     {
-              //       name: mname + " " + mlastName,
-              //       email: memail,
-              //       mobile: mmobile,
-              //       members: Number(mmembers),
-              //       property_location: mlocation?.value,
-              //       investment_timeline: mtimeline,
-              //       property_interest: piarr,
-              //       investment_capability: minvestment,
-              //       slote: mselectedSlot,
-              //       sloteDate: mselectedDate,
-              //     }
-              //   )
-              //   .then((res) => {
-              //     document.getElementById("partnerModal").remove();
-              //     openRazorpayCheckout(res.data);
-              //     // Trigger Razorpay
-              //   });
+              const exampleFormData = {
+                firstName: mname,
+                lastName: mlastName,
+                phoneNumber: mmobile,
+                email: memail,
+                preferredLocation: mlocation?.value, // or 'Dubai'
+                investmentTimeline: mtimeline,
+                propertyInterest: piarr,
+                investmentCapability: minvestment,
+                selectDate: mselectedDate,
+                slots: mselectedSlot,
+                members: 1,
+                tokenId: "TKN123456",
+                status: "Active",
+              };
 
-                const exampleFormData = {
-                  firstName: mname,
-                  lastName: mlastName,
-                  phoneNumber: mmobile,
-                  email: memail,
-                  preferredLocation: mlocation?.value, // or 'Dubai'
-                  investmentTimeline: mtimeline,
-                  propertyInterest: piarr,
-                  investmentCapability: minvestment,
-                  selectDate: mselectedDate,
-                  slots: mselectedSlot,
-                  members: mmembers,
-                  tokenId: 'TKN123456',
-                  status: 'Active'
-                };
-                
-                // Call the function
-                submitEBGRealityExpoForm(exampleFormData)
-                  .then(result => {
-                    if (result.success) {
-                      console.log('Form submitted successfully:', result);
-                    } else {
-                      console.error('Form submission failed:', result.error);
-                    }
-                  });
+              // Call the function
+              submitEBGRealityExpoForm(exampleFormData).then((result) => {
+                if (result.success) {
+                  console.log("Form submitted successfully:", result);
+                  bookTicket.disabled = false;
+                  spinner.classList.add("hidden");
+                  btnText.style.display = "block";
+                } else {
+                  console.error("Form submission failed:", result.error);
+                }
+              });
             }
           });
 
@@ -559,13 +535,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear previous errors for second form
     clearError("selectedDate");
     clearError("selectedSlot");
-    clearError("members");
+    // clearError("members");
 
     let isValid = true;
 
     const selectedDate = document.getElementById("selectedDate").value;
     const selectedSlot = document.getElementById("selectedSlot").value;
-    const members = document.getElementById("members").value;
+    // const members = document.getElementById("members").value;
 
     // Check if date is selected
     if (!selectedDate) {
@@ -579,14 +555,9 @@ document.addEventListener("DOMContentLoaded", function () {
       isValid = false;
     }
 
-    if (!members) {
-      showError("members", "Please select a members");
-      isValid = false;
-    }
 
     mselectedDate = selectedDate;
     mselectedSlot = selectedSlot;
-    mmembers = members;
     return isValid;
   }
 
