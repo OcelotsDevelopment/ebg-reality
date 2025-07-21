@@ -294,16 +294,15 @@ document.addEventListener("DOMContentLoaded", function () {
         Dropdown: formData.investmentCapability || "-Select-",
         SingleLine3: formData.selectDate || "",
         SingleLine4: formData.slots || "",
-        SingleLine5: formData.members || "",
         SingleLine6: formData.tokenId || "",
         SingleLine7: formData.status || "",
         zf_referrer_name: formData.referrerName || "",
         zf_redirect_url: formData.redirectUrl || "",
         zc_gad: formData.gclid || "",
-        SingleLine7: getQueryParam('utm_source'),
-        SingleLine1: getQueryParam('utm_campaign'),
-        SingleLine8: getQueryParam("utm_content"),
-        SingleLine9: getQueryParam("utm_medium"),
+        SingleLine1: getQueryParam('utm_source'),
+        SingleLine8: getQueryParam('utm_campaign'),
+        SingleLine9: getQueryParam("utm_content"),
+        SingleLine10: getQueryParam("utm_medium"),
       };
 
       // Create input elements for each field
@@ -364,7 +363,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
               const piarr = values.join(", ");
-              alert(`+91-${mmobile}`)
               const exampleFormData = {
                 firstName: mname,
                 lastName: mlastName,
