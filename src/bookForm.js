@@ -261,6 +261,16 @@ document.addEventListener("DOMContentLoaded", function () {
     rzp.open();
   }
 
+
+  function getQueryParam(name) {
+    name = name.replace(/[\[\]]/g, "\\$&");
+    let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(window.location.href);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+  }
+
   const submitEBGRealityExpoForm = (formData) => {
     return new Promise((resolve, reject) => {
       // Create a hidden form element
@@ -290,6 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
         zf_referrer_name: formData.referrerName || "",
         zf_redirect_url: formData.redirectUrl || "",
         zc_gad: formData.gclid || "",
+        SingleLine7: getQueryParam('utm_source'),
+        SingleLine1: getQueryParam('utm_campaign'),
+        SingleLine8: getQueryParam("utm_content"),
+        SingleLine9: getQueryParam("utm_medium"),
       };
 
       // Create input elements for each field
@@ -580,3 +594,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
