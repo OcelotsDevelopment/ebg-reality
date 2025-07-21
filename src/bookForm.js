@@ -276,6 +276,7 @@ document.addEventListener("DOMContentLoaded", function () {
         Name_First: formData.firstName,
         Name_Last: formData.lastName,
         PhoneNumber_countrycode: formData.phoneNumber,
+        // PhoneNumber_countrycodeval: "91",
         Email: formData.email,
         Dropdown1: formData.preferredLocation || "-Select-",
         SingleLine2: formData.investmentTimeline || "",
@@ -349,7 +350,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
               });
               const piarr = values.join(", ");
-
+              alert(`+91-${mmobile}`)
               const exampleFormData = {
                 firstName: mname,
                 lastName: mlastName,
